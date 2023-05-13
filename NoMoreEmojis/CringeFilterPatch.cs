@@ -37,7 +37,13 @@ public static class CringeFilterPatch
     private static readonly MethodInfo CringeFilterMethod = null!;
 
     [ReflectedFieldInfo(typeof(MyObjectBuilder_Identity), nameof(MyObjectBuilder_Identity.DisplayName))]
-    private static readonly FieldInfo NameField = null!;
+    private static readonly FieldInfo IdentityNameField = null!;
+
+    [ReflectedMethodInfo(typeof(MyPlayerCollection), "OnNewPlayerRequest")]
+    private static readonly MethodInfo PlayerRequestMethod = null!;
+    
+    [ReflectedMethodInfo(typeof(CringeFilterPatch), nameof(PlayerRequestPrefix))]
+    private static readonly MethodInfo PlayerRequestPrefixMethod = null!;
 
     public static void Patch(PatchContext context)
     {
@@ -47,6 +53,13 @@ public static class CringeFilterPatch
             return;
         context.GetPattern(TargetMethod).Prefixes.Add(PrefixMethod);
         context.GetPattern(LoadPlayersMethod).Transpilers.Add(TranspilerMethod);
+        context.GetPattern(PlayerRequestMethod).Prefixes.Add(PlayerRequestPrefixMethod);
+    }
+    
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static void PlayerRequestPrefix(ref MyPlayerCollection.NewPlayerRequestParameters parameters)
+    {
+        parameters.DisplayName = CringeFilter(parameters.DisplayName);
     }
 
     private static IEnumerable<MsilInstruction> Transpiler(IEnumerable<MsilInstruction> instructions)
@@ -58,9 +71,9 @@ public static class CringeFilterPatch
             {
                 yield return new(OpCodes.Dup);
                 yield return new(OpCodes.Dup);
-                yield return new MsilInstruction(OpCodes.Ldfld).InlineValue(NameField);
+                yield return new MsilInstruction(OpCodes.Ldfld).InlineValue(IdentityNameField);
                 yield return new MsilInstruction(OpCodes.Call).InlineValue(CringeFilterMethod);
-                yield return new MsilInstruction(OpCodes.Stfld).InlineValue(NameField);
+                yield return new MsilInstruction(OpCodes.Stfld).InlineValue(IdentityNameField);
             }
         }
     }
