@@ -2,5 +2,5 @@
 <PluginManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Name>NoMoreEmojis</Name>
     <Guid>BD8C0B34-9713-401B-988C-A5670EE241E6</Guid>
-    <Version>v1.0.3</Version>
+    <Version>v1.0.4</Version>
 </PluginManifest>

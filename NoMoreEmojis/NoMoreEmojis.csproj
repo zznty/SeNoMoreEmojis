@@ -8,6 +8,7 @@
         <LangVersion>11</LangVersion>
         <UseWpf>true</UseWpf>
         <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        <RestoreAdditionalProjectSources>https://nuget.storage.yandexcloud.net/index.json</RestoreAdditionalProjectSources>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -15,7 +16,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Torch.Server.ReferenceAssemblies" Version="1.3.1.221-master" PrivateAssets="all" IncludeAssets="compile" />
+        <PackageReference Include="Torch.Server.ReferenceAssemblies" Version="1.3.1.260-master" PrivateAssets="all" IncludeAssets="compile" />
         <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

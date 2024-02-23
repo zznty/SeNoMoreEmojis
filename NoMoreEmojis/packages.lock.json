@@ -28,13 +28,13 @@
       },
       "Torch.Server.ReferenceAssemblies": {
         "type": "Direct",
-        "requested": "[1.3.1.221-master, )",
-        "resolved": "1.3.1.221-master",
-        "contentHash": "DmZQwSG+NSr473AkBkvvEyqA72dTcwBS7enQvHF62vAax/qxX6f4VqvMuz5CJpM0Aj/twvpcVbtslbkcDtJw/g==",
+        "requested": "[1.3.1.260-master, )",
+        "resolved": "1.3.1.260-master",
+        "contentHash": "p9fHBwPI2BZDLO2PiSPvJxHQ7lksYf/20BZ0uUxMlSnJk/AvFUpjT6CMxJWow4UuAFG+NcPEI4VhxZ5x9jhGGA==",
         "dependencies": {
           "NLog": "4.4.12",
           "Newtonsoft.Json": "12.0.2",
-          "SpaceEngineersDedicated.ReferenceAssemblies": "1.201.13"
+          "SpaceEngineersDedicated.ReferenceAssemblies": "1.203.505"
         }
       },
       "Fody": {
@@ -64,8 +64,8 @@
       },
       "SpaceEngineersDedicated.ReferenceAssemblies": {
         "type": "Transitive",
-        "resolved": "1.201.13",
-        "contentHash": "FRXuNLENsz5jGQvL0QkogAGsxEJyUQlXhvWHBWfZiHCnCrAWMD60nEis6yt0xCQpazszfMtHonbxz72XMxnFoQ==",
+        "resolved": "1.203.505",
+        "contentHash": "Wq4GIn2ilHyFdLdVKdVhC7iGQ+1FdVsChKY6hyQluFYSSV7oe8bDc9aTZC8XgxNMKCZoQBSVyaYHxQD+74BySQ==",
         "dependencies": {
           "protobuf-net": "1.0.0"
         }

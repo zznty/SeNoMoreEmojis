@@ -18,7 +18,7 @@ namespace NoMoreEmojis;
 public static class CringeFilterPatch
 {
     private static readonly Regex CringeFilterRegex =
-        new("[\ue030-\ue032]", RegexOptions.Multiline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        new("[\u0000\ue030-\ue032]", RegexOptions.Multiline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
     [ReflectedMethodInfo(typeof(MyDedicatedServerBase), "OnConnectedClient")]
     private static readonly MethodInfo TargetMethod = null!;
